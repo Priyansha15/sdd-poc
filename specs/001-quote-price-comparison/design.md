@@ -13,7 +13,7 @@ params rather than a `POST` with a body.
   - `market` (string, required)
   - `quotedPrice` (decimal, required, > 0)
 
-- Response (200) — sufficient data:
+- Response (200) — sufficient data: 
 
   ```json
   {
