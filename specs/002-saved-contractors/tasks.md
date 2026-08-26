@@ -7,8 +7,9 @@ Package: `com.example.sddpoc.contractor`.
       `findAllByOrderByCreatedAtDesc`, `existsByPhone`) (design § Data
       model; AC-2, AC-7)
 - [ ] 3. Request DTO `SavedContractorRequest` with Bean Validation
-      (`@NotBlank` name/phone/trade, `@Pattern` on phone) (design § API
-      contract; AC-5, AC-6)
+      (`@NotBlank` name/phone/trade, `@Pattern` on phone, `@Pattern`
+      safe-character allow-list on name/trade) (design § API contract;
+      AC-5, AC-6, AC-8)
 - [ ] 4. Response DTO `SavedContractorResponse` (design § API contract;
       AC-1, AC-2)
 - [ ] 5. `SavedContractorNotFoundException` and
@@ -29,3 +30,5 @@ Package: `com.example.sddpoc.contractor`.
       - AC-6: malformed phone returns 400
       - AC-7: reusing an already-saved phone returns 409, no second row
         created
+      - AC-8: a name/trade containing `<script>` (or other markup/control
+        characters) returns 400
