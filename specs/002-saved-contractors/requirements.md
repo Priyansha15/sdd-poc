@@ -20,3 +20,6 @@ trade, so I can look them up again later without re-searching.
 - AC-5: A request missing name, phone, or trade (or blank) returns 400.
 - AC-6: A phone number that isn't plausibly a phone number (letters,
   empty, etc.) returns 400.
+- AC-7: A request whose phone number matches an already-saved
+  contractor's phone number is rejected as a duplicate (409), instead of
+  creating a second entry.
