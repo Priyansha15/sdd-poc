@@ -20,3 +20,11 @@ trade, so I can look them up again later without re-searching.
 - AC-5: A request missing name, phone, or trade (or blank) returns 400.
 - AC-6: A phone number that isn't plausibly a phone number (letters,
   empty, etc.) returns 400.
+- AC-7: A request whose phone number matches an already-saved
+  contractor's phone number is rejected as a duplicate (409), instead of
+  creating a second entry.
+- AC-8: A name or trade containing markup characters (`<`, `>`) or
+  control characters is rejected with 400, instead of being stored
+  as-is. This is a security exclusion: we don't control every place this
+  data might later be displayed, so unsafe characters are refused at the
+  boundary rather than trusted to be escaped downstream.
